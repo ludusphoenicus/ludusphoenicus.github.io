@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Ludoenicus</title>
+		<link href="style.css" rel="stylesheet" />
+        <video autoplay muted loop playsinline id="background-video" poster="fallback-image.jpg">
+            <source src="assets/background.mp4" type="video/mp4">
+        </video>
+	</head>
+	<body>
+		<h1 id="titleID" class="titleCLASS">Ludus Phoenicus</h1>
+		<div class="everythingCLASS" id="everythingID">
+            <h1>Ludus Phoenicus is heavily inspired by Tic-Tac-Toe. Specifically<br/>
+                an older variation of the game called "Terni Lapilli" where you<br/>
+                move the pieces in order to get 3 pieces in a single line row<br/>
+                whether it be straight or diagonal.</h1>
+			<div id="boardID" class="boardCLASS">
+				<div id="a"></div>
+				<div id="b"></div>
+				<div id="c"></div>
+				<div id="d"></div>
+			</div>
+            <h1>Each player has a limited amount of 4 pieces to place on the board.<br/>
+                After each player has placed down all of their 4 pieces, each player<br/>
+                must move a single piece that belongs to them on the board. The goal<br/>
+                of the game is to have 4 pieces aligned whether straight or diagona-<br/>
+                lly. A player may not place or move a piece to a square that already<br/>
+                has a piece on it. A player may not move a piece back to the square<br/>
+                they were already on after moving to another square 3-4 times in a<br/>
+                row.</h1>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>

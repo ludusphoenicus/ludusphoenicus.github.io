@@ -1,0 +1,43 @@
+@font-face {
+	font-family: "Salvadorian";
+	src: url(fonts/Salvadorian_exclamationless-Regular.otf);
+}
+
+body {
+	background-color: black;
+}
+
+* {
+	font-family: "Salvadorian";
+	color: white;
+}
+
+.titleCLASS {
+    text-align: center;
+    font-size: 5em;
+}
+
+.boardCLASS {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 128px;
+	transform: rotate(45deg);
+}
+
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.everythingCLASS {
+    display: flex;
+    justify-content: space-between;
+}
+
+
