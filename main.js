@@ -37,15 +37,27 @@ function checkForWinner() {
         if (squares.every(sq => 
             sq.firstChild.src.includes("pe.png") === isPe
         )) {
-            if (confirm(`${isPe ? "PE" : "AYIN"} WINS!`)) {
-                window.location.reload();
-            } else {
-                window.location.reload();
-            }
+            console.log(`${isPe ? "PE" : "AYIN"} WINS!`);
             return true;
         }
     }
     return false;
+}
+
+function getSquareIndex(square) {
+    return squaresArray.indexOf(square);
+}
+
+function isOneSquareAway(fromIndex, toIndex) {
+    const fromRow = Math.floor(fromIndex / 4);
+    const fromCol = fromIndex % 4;
+    const toRow = Math.floor(toIndex / 4);
+    const toCol = toIndex % 4;
+    
+    const rowDiff = Math.abs(fromRow - toRow);
+    const colDiff = Math.abs(fromCol - toCol);
+    
+    return (rowDiff <= 1 && colDiff <= 1) && !(rowDiff === 0 && colDiff === 0);
 }
 
 function handlePlacementPhase(clickedSquare) {
@@ -87,10 +99,15 @@ function handleMovementPhase(clickedSquare) {
 		}
 	} else {
 		if (!clickedSquare.hasChildNodes()) {
-			const piece = selectedSquare.firstChild;
-			clickedSquare.appendChild(piece);
-			turn = turn === 1 ? 0 : 1;
-			checkForWinner();
+			const fromIndex = getSquareIndex(selectedSquare);
+			const toIndex = getSquareIndex(clickedSquare);
+			
+			if (isOneSquareAway(fromIndex, toIndex)) {
+				const piece = selectedSquare.firstChild;
+				clickedSquare.appendChild(piece);
+				turn = turn === 1 ? 0 : 1;
+				checkForWinner();
+			}
 		}
 		
 		selectedSquare = null;
